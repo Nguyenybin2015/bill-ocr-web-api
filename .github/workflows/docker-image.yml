@@ -31,11 +31,11 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t nguyenybin2015/bill-ocr-admin-panel-api:latest .
+          docker build -t nguyenybin2015/bill-ocr-web-api:latest .
 
       - name: Push Docker image
         run: |
-          docker push nguyenybin2015/bill-ocr-admin-panel-api:latest
+          docker push nguyenybin2015/bill-ocr-web-api:latest
 
       - name: SSH into VPS and Deploy
         env:
