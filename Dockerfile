@@ -3,13 +3,13 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm install
 
-FROM node:18.20.4-alpine AS builder
+FROM nodemodule AS builder
 WORKDIR /app
 COPY . .
 COPY --from=nodemodule /app/node_modules ./node_modules
 RUN npm run build
 
-FROM node:18.20.4-alpine AS runner
+FROM nodemodule AS runner
 WORKDIR /app
 
 RUN apk add --no-cache alpine-conf && \
